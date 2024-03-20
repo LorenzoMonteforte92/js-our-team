@@ -12,41 +12,51 @@
 // Organizzare i singoli membri in card/schede
 
 //creo array di oggetti con info membri del team
+
+let membersContainer = document.querySelector(`#name-container`);
+
+let wayneImg = generateImg ("img/wayne-barnett-founder-ceo.jpg")
+let angelaCImg = generateImg ("img/angela-caroll-chief-editor.jpg")
+let walterImg = generateImg ("img/walter-gordon-office-manager.jpg")
+let angelaLImg = generateImg ("img/angela-lopez-social-media-manager.jpg")
+let scottImg = generateImg ("img/scott-estrada-developer.jpg")
+let barbaraImg = generateImg ("img/barbara-ramos-graphic-designer.jpg")
+
 let teamMembers =[
     {
         name: `Wayne Barnett`,
         role: `Founder & Ceo`, 
-        img: `wayne-barnett-founder-ceo.jpg`
+        img: `${wayneImg.outerHTML}`
     },
     {
         name: `Angela Caroll`,
         role: `Chief Editor`, 
-        img: `angela-caroll-chief-editor.jpg`
+        img: `${angelaCImg.outerHTML}`
     },
     {
         name: `Walter Gordon`,
         role: `Office Manager`, 
-        img: `walter-gordon-office-manager.jpg`
+        img: `${walterImg.outerHTML}`
     },
     {
         name: `Angela Lopez`,
         role: `Social Media Manager`, 
-        img: `angela-lopez-social-media-manager.jpg`
+        img: `${angelaLImg.outerHTML}`
     },
     {
         name: `Scott Estrada`,
         role: `Developer`, 
-        img: `scott-estrada-developer.jpg`
+        img: `${scottImg.outerHTML}`
     },
     {
         name: `Barbara Ramos`,
         role: `Graphic Designer`, 
-        img: `barbara-ramos-graphic-designer.jpg`
+        img: `${barbaraImg.outerHTML}`
     }
     
 ]
 
-let membersContainer = document.querySelector(`#name-container`);
+
 
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 //creo un ciclo for che scorre l'array
@@ -76,12 +86,12 @@ for(let i = 0; i < teamMembers.length; i++){
 
 
 
-
-
-
-
-
-
 //---------------
 //   FUNCTIONS
 //---------------
+
+function generateImg (imgUrl) {
+    let myImage = new Image(); 
+    myImage.src = imgUrl;
+    return myImage
+}

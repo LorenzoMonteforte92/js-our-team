@@ -14,6 +14,7 @@
 //creo array di oggetti con info membri del team
 
 let membersContainer = document.querySelector(`#name-container`);
+let row = document.querySelector(`#row`)
 
 let wayneImg = generateImg ("img/wayne-barnett-founder-ceo.jpg")
 let angelaCImg = generateImg ("img/angela-caroll-chief-editor.jpg")
@@ -74,12 +75,16 @@ for (let i = 0; i < teamMembers.length; i++){
 for(let i = 0; i < teamMembers.length; i++){
     let teamMembersIndex = teamMembers[i];
     //aggiungere a membersContainer il mio snippett di codice con i dati dei membri
-    membersContainer.innerHTML += `
-        <div>
-            <h4>${teamMembersIndex[`name`]}</h4>
-            <p>${teamMembersIndex[`role`]}</p>
-            <p>${teamMembersIndex[`img`]}</p>
+    row.innerHTML += `
+    <div class="col-4 mt-3">
+        <div class="card" style="width: 18rem;">
+            <div class="">${teamMembersIndex[`img`]}.</div>
+                <div class="card-body">
+                <h5 class="card-title">${teamMembersIndex[`name`]}</h5>
+                <p class="card-text">${teamMembersIndex[`role`]}</p>
+            </div>
         </div>
+    </div>      
     `
 }
 
